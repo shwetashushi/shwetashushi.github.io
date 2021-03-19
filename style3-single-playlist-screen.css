@@ -1,0 +1,488 @@
+         /*this file contains styles for the single playlist screen page*/
+
+body{
+    background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbAEtFxS1M2gG0myZF-RIiAwMFYPWOxMkU3g&usqp=CAU) ;
+    background-repeat: no-repeat;
+    background-size:cover;
+    color:white;
+    background-attachment: fixed;
+    font-family:sans-serif;
+    line-height: 1.5rem;
+    margin:0px;
+}
+/* for all links in home page the default text decorations have been removed and the color is white*/
+a{
+    text-decoration: none;
+    color:white;
+}
+hr{/*styles for all lines added in page*/
+    width: 80%;
+    font-size:0px;
+}
+/*styles for the topmost header part*/
+header{
+    position: sticky;
+    top:0%;
+    width: 100vw;
+    height: 10vh;
+    z-index: 10;
+    padding-top:1%;
+    padding-bottom: 1%;
+    background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbAEtFxS1M2gG0myZF-RIiAwMFYPWOxMkU3g&usqp=CAU) ;
+    background-repeat: no-repeat;
+    background-size:cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header span{/*all spans inside the header have position relative*/
+    position: relative;
+}
+#icon{/* this is the icon which you can see written music studio and the disc rotating*/
+    display: flex;
+    align-items: center;
+    padding-left:3%;
+}
+#icon img{/*this is the style for the disc image*/
+    box-sizing: border-box;
+    padding:2%;
+    width:30%;
+    border-radius:70%;
+    animation: rotates 1.2s ease-in-out infinite alternate-reverse;/*rotation animation is added to it*/
+}
+@keyframes rotates{/*this is the animation for rotation of the disc*/
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    75%{
+        transform: rotate(270deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+#icon-text{/*style for the text written as music studio in the topmost header*/
+    font-size: 1.5rem;
+    text-shadow:1px 1px 10px orange;
+}
+#favourite{/*style for the text "favourite" written in the topmost header*/
+    font-size: 1.1rem;
+    animation:zoom-in-out 1s ease-in-out infinite alternate;
+}
+@keyframes zoom-in-out{/*a zoom-in-out animation is added to the text "favourite"*/
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.3);
+        text-shadow: 1px 1px 10px yellow;
+    }
+}
+#search{/*this are the styles for the search form that you can see on topmost part*/
+    display:flex;
+    height:40%;
+    width:17%;
+ }
+ #search input{
+     border-width: 0;
+     width:75%;
+     text-align: center;
+ }
+ #search button{/*the buttons,i.e, the magnifier and the microphone ,styles*/
+     background-color: white;
+     border-width: 0;
+     width:13%;
+     color: grey;
+     text-align:center;
+ }
+ #magnifying-glass{/*the magnifying glass icon in the search span*/
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+ }
+ #mic{/*the microphone icon in the search span*/
+     border-bottom-right-radius: 50%;
+     border-top-right-radius: 50%;
+ }
+ #bell{/*style for the notification bell icon*/
+    color:orange;
+    font-size:2.5rem;
+    animation: vibrates 0.5s ease-in-out alternate infinite;/*a vibration animation has been added to the bell*/
+    text-shadow: 1px 1px 5px orangered;
+}
+@keyframes vibrates{/*the vibration animation added to the bell*/
+    from{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(-8deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(8deg);
+    }
+   to{
+        transform: rotate(0deg);
+    }
+ 
+}
+#header-image{
+    text-align: center;
+}
+#header-image img{/*the image of the person that you can see on rightmost of the header*/
+    width:40%;
+    border-radius: 70%;
+    box-shadow: 1px 1px 10px 2px white;
+}
+/*styles for everything inside the topmost header part ends here*/
+
+/*the main section below the topmost header*/
+aside{
+    display:inline-block;
+    vertical-align: top;
+}
+/*aside1 on the left side of page*/
+#aside1{
+    width:70vw;
+    height:75vh;
+    overflow: auto;  
+}
+#aside1::-webkit-scrollbar{/*if content overflows you can scroll vertically and the scroll bar will not be present*/
+    display: none;
+}
+#aside1-header{/*this is the part where you can see the coldplay band image,and info about it*/
+    width:90%;
+    height:70%;
+    background-color: #9b2c96;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+#aside1 section{
+    margin-block-end: 5%;
+}
+#content{/*content inside each aside section*/
+    width: 100%;
+    height: 100%;
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3%;
+}
+#music-band-image{
+    height: 100%;
+    width:30%;
+    display: flex;
+    opacity: 0.8;
+    box-shadow: 1px 1px 8px white;
+    box-sizing: border-box;
+}
+#music-band-image img{
+    width: 100%;
+    height: 100%;
+}
+#aside1-header-content{/*the content of the aside1 header,i.e, band image and info about the band*/
+    height: 85%;
+    width:68%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-right: 2%;
+    box-sizing: border-box;
+}
+#aside1-header-content>div:nth-child(1){
+    height:60%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;  
+}
+#aside1-header-heading{/*the "coldplay" that you can see written*/
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+#aside1-header-heading span:nth-child(1){
+    font-size:2rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 5px black;
+}
+#band-name{/*the "british band" that you can see written*/
+    color:lightgray;
+    font-size: 1.2rem;
+}
+#about-band{/*the info about the band,if it overflows the you can scroll through iyt vertically*/
+    text-align: justify;
+    color: lightgray;
+    overflow: auto;
+}
+#about-band::-webkit-scrollbar{
+    display: none;
+}
+#aside1-header-content>div:nth-child(2){
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height:20%;
+}
+#play-all-container{
+    height: 100%;
+}
+#play-all{/*the "play-all" sign that you can see at top of aside1*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    height:70%;
+    background-image:linear-gradient(to right,purple,blueviolet,hotpink,pink);
+    margin-bottom: 3%;
+    box-shadow: 1px 1px 5px black;
+}
+#song-list{/*the entire list of songs in aside1 section*/
+    width:90%;
+    height:35%;
+}
+#song-list>div{/*each song in the song list*/
+    width:100%;
+    height:35%;
+    margin-block-end:2%;
+    background-color:#9b2c96;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 2%;
+    padding-right: 2%;
+    box-sizing: border-box;
+}
+.serial-number{
+    width:3%;
+    position: relative;
+}
+.signal{
+    visibility: hidden;
+    position: absolute;
+    top:0;
+}
+#song-list>div:hover .serial-number{/*hover over each song and the serial number disappears and instead of that a signal icon appears*/
+    visibility: hidden;
+}
+#song-list>div:hover .signal{
+    visibility: visible;
+    text-shadow: 1px 1px 5px orange;
+}
+.song-image{
+    width:6%;
+    height:85%;
+    box-sizing: border-box;
+    padding:0;
+    box-shadow: 1.5px 1.5px 10px 2px pink;
+    background-color: black;
+}
+.song-image img{
+   margin:0;
+   padding:0;
+   height: 100%;
+   width: 100%;
+}
+.song-image img:hover{
+    opacity:0.6;
+    transition: 0.1s ease-in-out;
+}
+.song-writer{
+    width:35%;
+}
+.song-writer div:nth-child(2){
+    font-size: 0.9rem;
+    color: lightgray;
+}
+.time{
+    width:20%;
+    text-align: center;
+}
+.heart{
+    width:20%;
+    text-align: center;
+}
+.heart:hover{
+    transform: scale(1.2);
+    color: red;
+    transition: 0.5s ease-in-out;
+}
+/*aside1 complete*/
+
+/*aside2 section on the right side of page*/
+#aside2{
+    width:28vw;
+    height:75vh;
+    overflow: hidden;
+    padding-top: 1%;
+}
+#aside2 section{
+    margin-block-end: 3%;
+}
+#similar-artist{/*the similar artist section in the aside 2 section*/
+    width: 100%;
+    height: 32vh;
+    overflow: auto;
+}
+#similar-artist::-webkit-scrollbar{
+    display: none;
+}
+#similar-artist .sec-content div span:nth-child(3){
+    text-align: center;
+}
+#similar-artist .song-image{
+    width:25%;
+    height: 100%;
+}
+#similar-artist .song-writer{
+    width:40%;
+}
+/*recently played section in the aside 2 section*/
+#recently-played{
+    width: 100%;
+    height:40vh;
+    overflow: auto;
+}
+#recently-played::-webkit-scrollbar{
+    display: none;
+}
+#recently-played .sec-content>div:hover .serial-number{
+    visibility: hidden;
+}
+#recently-played .sec-content>div:hover .signal{
+    visibility: visible;
+    text-shadow: 1px 1px 5px orange;
+}
+#recently-played .serial-number{
+    width:8%;
+    text-align: center;
+}
+#recently-played .song-image{
+    width:12%;
+    height:95%;
+    border-radius: 12%;
+}
+#recently-played .song-image img{
+    border-radius: inherit;
+}
+#recently-played .song-writer{
+    width:42%;
+}
+.sec-heading{
+    z-index: 2;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 3%;
+    box-sizing: border-box;
+    position: sticky;
+    top:0%;
+    background-image: linear-gradient(rgb(115, 65, 161),rgb(233, 77, 233));
+}
+.sec-heading span:nth-child(1){
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.sec-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+    padding-top: 3%;
+}
+#similar-artist .sec-content{
+    height:62vh;
+}
+#recently-played .sec-content{
+    height:85vh;
+}
+.sec-content>div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:98%;
+    height:25%;
+    margin-bottom: 2%;
+}
+/*aside2 section complete*/
+
+/*styles for footer*/
+footer{/*style for the entire footer container*/
+    height:10vh;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    background-color:rgb(70, 62, 62);
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    color:white;
+}
+footer img{/*the img of artist inside the footer*/
+    width:20%;
+    height:80%;
+    box-shadow: 1px 1px 10px 1px black;
+}
+footer i{/*all icons inside the footer*/
+    font-size: 1.2rem;
+}
+footer>span:nth-child(1){/*styles for the first span in the footer that contains the artist image,her name,song name,and the heart icon and stop icon*/
+    width:20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+footer>span:nth-child(2){/*this contains styles for the second span inside footer which contains play button icons and the long slide and the time of playing*/
+    width:40%;
+    height:80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+footer>span:nth-child(3){/*this contains the laptop icon ,vol up icon and the other icons*/
+    width:28%;
+    height:70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#play-song div:first-child{/*icons for the second span which basically are play button icons*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:35%;
+}
+#play-song div:nth-child(2){/*the slider in the second span and the time*/
+    display: flex;
+    justify-content: space-around;
+    width:90%;
+    align-items: center;
+}
+.slider{
+    display: flex;
+    align-items: center;
+}
+#play-song-slider{
+    width:80%;
+    height:20%;
+}
+.slider input{
+    width: 100%;
+}
+#vol-slider{/*vol-up slider*/
+    height:10%;
+    width:40%;
+}
+/*footer complete*/

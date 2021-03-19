@@ -1,0 +1,269 @@
+
+                           /*this file contains styles for the top-most header and the playslist aside section*/
+/*style for the body of homepage*/
+body{
+    background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbAEtFxS1M2gG0myZF-RIiAwMFYPWOxMkU3g&usqp=CAU) ;
+    background-repeat: no-repeat;
+    background-size:cover;
+    color:white;
+    background-attachment: fixed;
+    font-family:sans-serif;
+    line-height: 1.5rem;
+    margin:0px;
+}
+/* for all links in home page the default text decorations have been removed and the color is white*/
+a{
+    text-decoration: none;
+    color:white;
+}
+hr{/*styles for all lines added in page*/
+    width: 80%;
+    font-size:0px;
+}
+/*styles for the topmost header part*/
+header{
+    position: sticky;
+    top:0%;
+    width: 100vw;
+    height: 10vh;
+    z-index: 10;
+    padding-top:1%;
+    padding-bottom: 1%;
+    background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbAEtFxS1M2gG0myZF-RIiAwMFYPWOxMkU3g&usqp=CAU) ;
+    background-repeat: no-repeat;
+    background-size:cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header span{/*all spans inside the header have position relative*/
+    position: relative;
+}
+#icon{/* this is the icon which you can see written music studio and the disc rotating*/
+    display: flex;
+    align-items: center;
+    padding-left:3%;
+}
+#icon img{/*this is the style for the disc image*/
+    box-sizing: border-box;
+    padding:2%;
+    width:30%;
+    border-radius:70%;
+    animation: rotates 1.2s ease-in-out infinite alternate-reverse;/*rotation animation is added to it*/
+}
+@keyframes rotates{/*this is the animation for rotation of the disc*/
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    75%{
+        transform: rotate(270deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+#icon-text{/*style for the text written as music studio in the topmost header*/
+    font-size: 1.5rem;
+    text-shadow:1px 1px 10px orange;
+}
+#favourite{/*style for the text "favourite" written in the topmost header*/
+    font-size: 1.1rem;
+    animation:zoom-in-out 1s ease-in-out infinite alternate;
+}
+@keyframes zoom-in-out{/*a zoom-in-out animation is added to the text "favourite"*/
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.3);
+        text-shadow: 1px 1px 10px yellow;
+    }
+}
+#search{/*this are the styles for the search form that you can see on topmost part*/
+    display:flex;
+    height:40%;
+    width:17%;
+ }
+ #search input{
+     border-width: 0;
+     width:75%;
+     text-align: center;
+ }
+ #search button{/*the buttons,i.e, the magnifier and the microphone ,styles*/
+     background-color: white;
+     border-width: 0;
+     width:13%;
+     color: grey;
+     text-align:center;
+ }
+ #magnifying-glass{/*the magnifying glass icon in the search span*/
+    border-bottom-left-radius: 50%;
+    border-top-left-radius: 50%;
+ }
+ #mic{/*the microphone icon in the search span*/
+     border-bottom-right-radius: 50%;
+     border-top-right-radius: 50%;
+ }
+ #bell{/*style for the notification bell icon*/
+    color:orange;
+    font-size:2.5rem;
+    animation: vibrates 0.5s ease-in-out alternate infinite;/*a vibration animation has been added to the bell*/
+    text-shadow: 1px 1px 5px orangered;
+}
+@keyframes vibrates{/*the vibration animation added to the bell*/
+    from{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(-8deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(8deg);
+    }
+   to{
+        transform: rotate(0deg);
+    }
+ 
+}
+#header-image{
+    text-align: center;
+}
+#header-image img{/*the image of the person that you can see on rightmost of the header*/
+    width:40%;
+    border-radius: 70%;
+    box-shadow: 1px 1px 10px 2px white;
+}
+/*styles for everything inside the topmost header part ends here*/
+aside {
+    display: inline-block;/*each aside section has inline block display*/
+    vertical-align: top;
+}
+
+
+/*playlist aside section that you can see on right side of page*/
+#playlist{
+    width:30vw;
+    height: 72vh;
+    overflow-y:scroll;/*content in playlist if overflows the we can vertically scroll through*/
+    overflow-x: visible;
+    margin-top: 3%;
+}
+#playlist::-webkit-scrollbar{/*the scrollbar thats visisble by default has been removed*/
+    display: none;
+}
+#queue-heading {/*heading for the playlist queue,it will stick to the topmost part of its container*/
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+    position:sticky;
+    top:0;
+    z-index: 2;
+    width: 100%;
+    background-image: linear-gradient(rgb(115, 65, 161),rgb(233, 77, 233));
+}
+#queue h4,#queue a{/*the text "queue" and the drop down icon will be greenyellow in color*/
+    color:greenyellow;
+}
+#queue-dropdown{/*style of the queue dropdown,clicking on the dropdown icon,the queue dropdown list will appear*/
+    background-color: white;
+    width: 0;/*lightbox animation has been done here*/
+    height:0;
+    overflow:hidden;
+    position: absolute;
+    transform: translateY(-12%);
+    color:rgb(94, 94, 228);
+    box-shadow: 1px 1px 10px 1px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#queue-dropdown a{
+    color:rgb(94, 94, 228);
+}
+#queue-dropdown:target{/*when the queue-dropdown is targeted,then it will open(lightbox animation)*/ 
+        background-color: white;
+        width: 7vw;
+        height:15vh;
+        transition: 0.2s ease-in-out;
+        border: 1px solid black;
+    }
+#playlist-content li{/*each li in the playlist aside section*/
+    width: 98%;
+    margin-top:4%;
+    margin-left:-5%;
+    padding: 2%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+}
+.serial-number{
+    position:relative;
+}
+.serial-number div:nth-child(2){/*tthe signal icon will be positioned absolute and will be hidden*/
+    position: absolute;
+    top:0;
+    visibility:hidden;
+}
+#playlist-content li:hover .signal{/*when you hover over li,then the serial number will disappear and instead of that a signal icon will appear*/
+   visibility: visible;
+   text-shadow:1px 1px 5px greenyellow;
+}
+#playlist-content li:hover .number{/*when you hover over li,then the serial number will disappear */
+    visibility: hidden;
+}
+#playlist-content li>span:nth-child(2){/*this consists of the styles for image of the song and the play icon */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:15%;
+    height: 100%;
+    border-radius: 12%;
+    background-color: black;
+    text-shadow: 1px 1px 10px black;
+}
+#playlist-content .play-button{/*style for the play icon,it is hidden right now,it will appear on hover*/
+    font-size: 1.2rem;
+    position: absolute;
+    visibility: hidden;
+}
+#playlist-content li:hover{/*when you hover on the li, a white border on it appears*/
+    border:1px solid white;
+}
+#playlist-content img{/*styles for the image in the playlist-content li*/
+    height:100%;
+    width:100%;
+    border-radius:12%;
+    box-shadow:1px 1px 10px 2px pink;
+}
+#playlist-content li>span:nth-child(2):hover .play-button{/*when you hover on the image container,then a play icon appears in the middle of it*/
+    visibility: visible;
+}
+.song-n-writer{/*the song name and writer appears in this span for the playlist*/
+    width:60%;
+    padding-left:3%;
+}
+.text1{
+    font-size:1.2rem;
+    font-weight: bold;
+}
+.text2{
+    color:lightgrey;
+}
+.heart:hover{/*when you hover over the heart icon then it turns red and scales to 1.2 in size*/
+    color:red;
+    transition: 0.2s ease-in-out;
+    transform: scale(1.2);
+}
+/*styles for playlist aside section end here*/

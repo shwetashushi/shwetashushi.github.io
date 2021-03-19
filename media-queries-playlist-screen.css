@@ -1,0 +1,275 @@
+/*media queries to make the single playlist screen responsive*/
+/*breaking points are 1300px,1100px,900px,800px,700px,600px,500px,400px*/
+#more{
+    height:5vh;
+    width:10vw;
+    position: fixed;
+    right:0;
+    top:40%;
+    background-image: linear-gradient(to bottom right,purple,blueviolet,violet);
+    z-index: 4;
+    text-shadow: 1px 1px 3px white;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    visibility: hidden;
+}
+#close{
+    text-align: center;
+    display: none;
+}
+@media screen and (max-width:1300px){
+    #aside1-header{
+        height:20vw;
+        font-size: 14px;
+    }
+    #song-list>div{
+        height:32%;
+    }
+}
+@media screen and (max-width:1100px){
+    #aside1-header{
+        height:33vh;
+    }
+    #more{
+        visibility: visible;
+    }
+    #aside1{
+        width: 100vw;
+    }
+    #aside2{
+        display: none!important;
+        position: fixed!important;
+    }
+    #aside2:target{
+        display:inline-block!important;
+        top:15%!important;
+        right:0!important;
+        width:40vw;
+        height:75vh;
+        z-index: 5!important;
+        background-color: blueviolet!important;
+        border: 2px solid white!important;
+        box-shadow: 1px 1px 5px white!important;
+    }
+    .sec-heading{
+        background-image:inherit;
+        background-color: blueviolet;
+    }
+    #close{
+      display: block;
+    }
+    #search{
+      width:22%;
+    }
+    #header-icon{
+      font-size: 1.1rem;
+    }
+    #bell{
+      font-size: 2rem;
+    }
+    footer img{
+      width:25%;
+      height:100%;
+    }
+}
+@media screen and (max-width:900px){
+    :root{
+        font-size: 15px;
+    }
+    #favourite{
+         display: none!important;
+    }
+    #search{
+        left:-10%;
+    }
+    footer i{
+        font-size: 1rem;
+    }
+    #band-name{
+        font-size: 1rem!important;
+    }
+}
+@media screen and (max-width:800px){
+    :root{
+        font-size: 15px;
+    }
+    #aside1-header{
+        height:30vh;
+    }
+    #aside1-header-heading span:nth-child(1){
+        font-size: 1.5rem;
+    }
+    #aside2:target{
+        width:50vw;
+    }
+    #more{
+        width:13vw;
+    }
+    footer>span:nth-child(1){
+        width:30%;
+    }
+    footer i{
+        font-size: 1rem;
+    }
+    #song-list>div{
+        height:28%;
+    }
+    #aside1-header-content>div:nth-child(1){
+        height:70%;
+    }
+}
+@media screen and (max-width:700px){
+    footer>span:nth-child(1){
+        width: 28%;
+    }
+    #play-song div:first-child{
+        width:45%;
+    }
+    footer i{
+        font-size:1.1rem;
+    }
+    #aside1-header{
+        font-size: 12px;
+        height:30vh;
+    }
+    #song-list>span{
+        height:26%;
+    }
+    .song-image{
+        width:8%;
+    }
+    #music-band-image{
+        width:35%;
+    }
+    #aside1-header-content{
+        width:62%;
+    }
+    #band-name{
+        font-size: 0.8rem!important;
+    }
+    #about-band{
+        line-height: 15px;
+    }
+    #aside2:target{
+        width:60vw;
+    }
+}
+@media screen and (max-width:600px){
+    #search{
+        width:70%;
+        left:0.5px;
+    }
+    #search input{
+        width:40%;
+        font-size: 0.7rem;
+    }
+    #search button{
+        width:20%;
+        font-size: 0.7rem;
+    }
+    #more{
+        width:20vw;
+    }
+    footer i{
+        font-size:1rem;
+    }
+    footer>span:nth-child(1){
+        width:35%;
+    }
+    footer img{
+        width: 28%;
+    }
+    footer>span:nth-child(2){
+        width:50%;
+    }
+    footer>span:nth-child(3){
+        width:10%;
+    }
+    #play-song div:nth-child(2){
+        font-size: 0.8rem;
+    }
+    #bars{
+        display: none;
+    }
+    #vol-up{
+        display: none;
+    }
+    #vol-slider{
+       display: none;
+    }
+    #song-list{
+       font-size: 13px;
+    }
+    #aside1-header{
+        height:28vh;
+    }
+    #aside1-header-content>div:nth-child(1){
+        height:82%;
+    }
+    #aside1-header-content>div:nth-child(2){
+        height:15%;
+        font-size:10px;
+    }
+    #music-band-image{
+        width:40%;
+    }
+    #aside1-header-content{
+        width:58%;
+    }
+    #aside2:target{
+        width:65vw;
+    }
+}
+@media screen and (max-width:500px){
+    footer>span:nth-child(1) i{
+          display: none;
+    }
+    footer img{
+        width:36%;
+    }
+    #music-band-image{
+        width:45%;
+    }
+    #aside1-header-content{
+        width:52%;
+        font-size:11px;
+    }
+    .song-image{
+        width:10%;
+    }
+    #aside1-header-content>div:nth-child(2){
+        height:12%;
+    }
+    .song-writer{
+        width:30%;
+    }
+    #aside2:target{
+        width:70vw;
+    }
+}
+@media screen and (max-width:400px){
+    :root{
+        font-size: 13px;
+    }
+    #more{
+        width:25vw;
+    }
+    #aside1-header{
+        width: 100%;
+    }
+    .time{
+        width:10%;
+    }
+    #followers{
+        display: none;
+    }
+    #song-list>div{
+        height:25%;
+    }
+    #aside2:target{
+        width:80vw;
+    }
+}
